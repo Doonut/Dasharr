@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - docker-workflow
+  workflow_dispatch: # Allow manual triggering from GitHub Actions UI
 
 # cancel any previously-started, yet still active runs of this workflow on the same branch
 concurrency:
