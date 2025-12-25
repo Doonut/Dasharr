@@ -1,10 +1,12 @@
 name: Docker Build Branch
 
+# This workflow builds Docker images and pushes to GHCR
+# It's on a separate branch to avoid adding it to the PR
+# To use: merge your add-all-trackers-support changes into this branch, then push
 on:
   push:
     branches:
       - docker-workflow
-      - add-all-trackers-support
 
 # cancel any previously-started, yet still active runs of this workflow on the same branch
 concurrency:
