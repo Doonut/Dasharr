@@ -35,9 +35,10 @@ jobs:
       image-names: |
         ghcr.io/${{ github.repository }}
 
-      # Tag with branch name so you can pull ghcr.io/Doonut/dasharr:add-all-trackers-support
-      # If building from docker-workflow branch, tag as add-all-trackers-support
+      # Tag as 'latest' so you can pull ghcr.io/Doonut/dasharr:latest
+      # Also tag with branch name for specific version tracking
       tag-rules: |
+        type=raw,value=latest,priority=100
         type=raw,value=add-all-trackers-support,priority=200
         type=raw,value=add-all-trackers-support-{{sha}},priority=300
 
